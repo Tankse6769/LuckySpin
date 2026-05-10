@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucky Spin</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
+    .container {
+      text-align: center;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ff00ff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎰 Lucky Spin</h1>
+    <button onclick="spin()">Spin</button>
+    <h2 id="result"></h2>
+  </div>
+
+  <script>
+    function spin() {
+      const outcomes = ["WIN", "LOSE", "JACKPOT", "TRY AGAIN"];
+      const result = outcomes[Math.floor(Math.random() * outcomes.length)];
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>
